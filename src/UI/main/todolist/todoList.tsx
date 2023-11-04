@@ -1,7 +1,10 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import styled from 'styled-components';
-import { getTodos } from '../../../API/todoListAPI';
+
 import { TodoItem } from './todoItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { getTodosAsyncAC } from '../../../BLL/todoSaga';
+import { StateType } from '../../../BLL/store';
 
 const Styled = styled.section`
 display: flex;
@@ -9,11 +12,11 @@ flex-direction: column;
 gap: 15px;
 `
 export const TodoList:FC = ()=>{
-  const [todoList, setTodoList] = useState()
+  const allTodos = useSelector((state:StateType)=>state.todoList)
+  const todoList = allTodos.map(todo=><TodoItem {...todo} key={todo.id}/>)
+  const dispatch = useDispatch()
   useEffect(()=>{
-    getTodos().then(todos=>{
-      setTodoList(todos.map((todo:any)=><TodoItem {...todo} key={todo.id}/>))
-    })
+    dispatch(getTodosAsyncAC())
   },[])
   return (
     <Styled>

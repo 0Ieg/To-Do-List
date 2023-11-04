@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { deleteTodo } from '../../../API/todoListAPI';
+import { useDispatch } from 'react-redux';
+import { deleteTodoAsyncAC } from '../../../BLL/todoSaga';
+
 
 const Styled = styled.div`
 display: flex;
@@ -11,16 +13,17 @@ display: flex;
 `
 export const TodoItem:FC<{id:string, text:string, completed:boolean}> = (props)=>{
   const {id, text, completed} = props
+  const dispatch = useDispatch()
   const completeHandler = ()=>{
     console.log(!completed)
   }
   const deleteHandler = ()=>{
-    deleteTodo(id)
+    dispatch(deleteTodoAsyncAC(id))
   }
   return (
     <Styled>
-      <input type="checkbox" name="" id="" checked={props.completed} onChange={completeHandler}/>
-      <div>{props.text}</div>
+      <input type="checkbox" name="" id="" checked={completed} onChange={completeHandler}/>
+      <div>{text}</div>
       <button className='delete' onClick={deleteHandler}>Delete</button>
     </Styled>
   )
