@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { deleteTodoAsyncAC } from '../../../BLL/todoSaga';
+import { completeTodoAsyncAC, deleteTodoAsyncAC } from '../../../BLL/todoSaga';
 
 
 const Styled = styled.div`
@@ -15,7 +15,7 @@ export const TodoItem:FC<{id:string, text:string, completed:boolean}> = (props)=
   const {id, text, completed} = props
   const dispatch = useDispatch()
   const completeHandler = ()=>{
-    console.log(!completed)
+    dispatch(completeTodoAsyncAC({id:id,completed:!completed}))
   }
   const deleteHandler = ()=>{
     dispatch(deleteTodoAsyncAC(id))

@@ -18,3 +18,15 @@ export const deleteTodoAPI = (id:string)=>{
     .then(resp=>resp.status===200)
   )
 }
+export const completeTodoAPI = (payload:{id:string, completed:boolean})=>{
+  return(
+    myAxios.patch(`${payload.id}`,{completed:payload.completed})
+    .then(resp=>resp.status===200)
+  )
+}
+export const addTodoAPP = (payload:{id:string, text:string, completed:boolean})=>{
+  return(
+    myAxios.post(``, payload)
+    .then(resp=>console.log(resp))
+  )
+}

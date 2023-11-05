@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export type TodoType = {id:string, text:string, completed:boolean}
+
 const slice = createSlice({
   name: 'todoList',
-  initialState: [] as {id:string, text:string, completed:boolean}[],
+  initialState: [] as TodoType[],
   reducers:{
     getTodos:(state, action)=>{
       return state = action.payload
