@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { deleteTodoAsyncAC } from '../BLL/todoSaga';
 
 const myAxios = axios.create({
   baseURL: 'http://localhost:3001/todos'
@@ -24,9 +23,9 @@ export const completeTodoAPI = (payload:{id:string, completed:boolean})=>{
     .then(resp=>resp.status===200)
   )
 }
-export const addTodoAPP = (payload:{id:string, text:string, completed:boolean})=>{
+export const addTodoAPI = (payload:{id:string, text:string, completed:boolean})=>{
   return(
     myAxios.post(``, payload)
-    .then(resp=>console.log(resp))
+    .then(resp=>resp.status===201)
   )
 }

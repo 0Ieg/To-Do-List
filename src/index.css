@@ -8,6 +8,21 @@ a{
   color: inherit;
   text-decoration: none;
 }
+[class*='container']{
+  max-width: 1430px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 :root{
   --color-black: #000;
+  --color-white: #fff;
+  --color-pink: #F88DAD;
+  --color-yellow: #FAC748;
+  --color-blue: #1D2F6F;
+  --color-violet: #8390FA;
+  --color-violet-light: #abb4fd;
+  --color-cream: #F9E9EC;
+
+  --borrad: 10px;
 }
