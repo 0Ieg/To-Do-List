@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTodosAsyncAC } from '../../../BLL/todoSaga';
 import { StateType } from '../../../BLL/store';
 import { NewTodoForm } from './form';
+import { ProgressAndClearing } from './progress';
 
 const Styled = styled.section`
 display: flex;
@@ -44,6 +45,9 @@ export const TodoList:FC = ()=>{
         </div>
         <div className="todoList">
           {todoList}
+        </div>
+        <div className="progress">
+          <ProgressAndClearing/>
         </div>
       </div>
     </Styled>

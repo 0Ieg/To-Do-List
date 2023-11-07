@@ -13,12 +13,20 @@ display: flex;
   border-radius: var(--borrad) 0 0 var(--borrad);
   padding: 10px;
   font: 400 20px Inter;
+  &:focus{
+    outline: none;
+  }
 }
 .button{
   cursor: pointer;
   padding: 10px;
   border-radius: 0 var(--borrad) var(--borrad) 0;
   font: 400 16px Inter;
+  background-color: var(--color-violet);
+  transition: background-color 0.05s ease, color 0.05s ease;
+  &:disabled{
+    background-color: var(--color-violet-light);
+  }
 }
 `
 export const NewTodoForm:FC = ()=>{

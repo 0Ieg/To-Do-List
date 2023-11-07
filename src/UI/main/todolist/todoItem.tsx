@@ -6,23 +6,30 @@ import { completeTodoAsyncAC, deleteTodoAsyncAC } from '../../../BLL/todoSaga';
 
 const Styled = styled.div`
 display: flex;
+align-items: center;
 gap: 10px;
 width: 100%;
-padding: 10px;
+padding: 0 10px;
 background-color: var(--color-violet);
 border-radius: var(--borrad);
 transition: background-color 0.05s ease;
+.completed{
+  width: 20px;
+  height: 20px;
+}
 .text{
   flex-grow: 1;
   font: 400 20px Inter;
   cursor: pointer;
   user-select: none;
+  padding: 10px 0;
 }
 .edit,.delete{
   cursor: pointer;
   background-color: transparent;
   display: flex;
   align-items: center;
+  height: max-content;
   svg{
     fill: var(--color-black);
     width: 20px;
@@ -44,7 +51,7 @@ export const TodoItem:FC<{id:string, text:string, completed:boolean}> = (props)=
   }
   return (
     <Styled>
-      <input type="checkbox" name="" id="" checked={completed} onChange={completeHandler}/>
+      <input className='completed' type="checkbox" name="" id="" checked={completed} onChange={completeHandler}/>
       <div className='text' onClick={completeHandler}>{text}</div>
       <button className='edit'>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">

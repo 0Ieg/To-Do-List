@@ -29,3 +29,6 @@ export const addTodoAPI = (payload:{id:string, text:string, completed:boolean})=
     .then(resp=>resp.status===201)
   )
 }
+export const ClearTodosAPI = (todosID:string[])=>{
+  todosID.forEach((id,index)=>setTimeout(()=>myAxios.delete(`${id}`),index*60))
+}
