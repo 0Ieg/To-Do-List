@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-const myAxios = axios.create({
-  baseURL: 'http://localhost:3001/todos'
-})
-
+const myAxios = axios.create({baseURL: 'http://localhost:3001/todos'})
 
 export const getTodosAPI = ()=>{
   return(
@@ -25,7 +22,7 @@ export const completeTodoAPI = (payload:{id:string, completed:boolean})=>{
 }
 export const addTodoAPI = (payload:{id:string, text:string, completed:boolean})=>{
   return(
-    myAxios.post(``, payload)
+    myAxios.post(``, {text:payload.text, completed:payload.completed})
     .then(resp=>resp.status===201)
   )
 }

@@ -14,6 +14,7 @@ background-color: var(--color-violet);
 border-radius: var(--borrad);
 transition: background-color 0.05s ease;
 .completed{
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
 }
