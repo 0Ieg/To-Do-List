@@ -13,6 +13,7 @@ display: flex;
   border-radius: var(--borrad) 0 0 var(--borrad);
   padding: 10px;
   font: 400 20px Inter;
+  min-width: 100px;
   &:focus{
     outline: none;
   }
@@ -24,6 +25,7 @@ display: flex;
   font: 400 16px Inter;
   background-color: var(--color-violet);
   transition: background-color 0.05s ease, color 0.05s ease;
+  flex-shrink: 0;
   &:disabled{
     background-color: var(--color-violet-light);
   }
@@ -42,7 +44,7 @@ export const NewTodoForm:FC = ()=>{
   }
   return(
     <Styled onSubmit={handleSubmit(handler)}>
-      <input className="field" type="text" {...register('text', validParams)} placeholder={errors?.text?errors.text.message as string:''} autoComplete="off"/>
+      <input className="field" type="text" {...register('text', validParams)} placeholder={errors?.text?errors.text.message as string:''} autoComplete="off" />
       <button className="button" disabled={!isValid}>Add To-Do</button>
     </Styled>
   )

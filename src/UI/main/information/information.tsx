@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const Styled = styled.section`
 `
-export const HomePage:FC = ()=>{
+export const Information:FC = ()=>{
   return (
     <Styled>
-      HomePage
+      Information
     </Styled>
   )
 }

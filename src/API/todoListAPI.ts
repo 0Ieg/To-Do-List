@@ -22,7 +22,7 @@ export const completeTodoAPI = (payload:{id:string, completed:boolean})=>{
 }
 export const addTodoAPI = (payload:{id:string, text:string, completed:boolean})=>{
   return(
-    myAxios.post(``, {text:payload.text, completed:payload.completed})
+    myAxios.post(``, payload)
     .then(resp=>resp.status===201)
   )
 }

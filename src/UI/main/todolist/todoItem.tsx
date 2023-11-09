@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { completeTodoAsyncAC, deleteTodoAsyncAC } from '../../../BLL/todoSaga';
 
-
 const Styled = styled.div`
 display: flex;
 align-items: center;

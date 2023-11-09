@@ -27,12 +27,13 @@ background-color: var(--color-violet-light);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow: hidden;
   }
 }
 `
 export const TodoList:FC = ()=>{
   const allTodos = useSelector((state:StateType)=>state.todoList)
-  const todoList = allTodos.map(todo=><TodoItem {...todo} key={todo.id}/>)
+  const todoList = allTodos.map((todo,index)=><TodoItem {...todo} key={todo.id}/>)
   const dispatch = useDispatch()
   useEffect(()=>{
     dispatch(getTodosAsyncAC())

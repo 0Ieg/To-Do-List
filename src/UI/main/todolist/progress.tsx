@@ -20,9 +20,9 @@ display: flex;
     .status{
       width: 100%;
       height: 100%;
-      background-color: #32dc32;
+      background-color: var(--color-green);
       border-radius: 10px 0 0 10px;
-      box-shadow: ${props=>((props.translate===-100)?0:1)+"px" + " 0 "+ ((props.translate===-100)?0:3)+"px #32dc32"};
+      box-shadow: ${props=>((props.translate===-100)?0:1)+"px" + " 0 "+ ((props.translate===-100)?0:3)+"px var(--color-green)"};
       transform: ${props=>'translateX('+ props.translate +'%)'};
       transition: transform 0.5s ease;
     }

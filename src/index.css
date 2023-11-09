@@ -9,7 +9,7 @@ a{
   text-decoration: none;
 }
 [class*='container']{
-  max-width: 1430px;
+  max-width: 830px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
@@ -25,7 +25,10 @@ body{
   --color-blue: #1D2F6F;
   --color-violet: #8390FA;
   --color-violet-light: #abb4fd;
+  --color-violet-light-op: #abb5fd04;
   --color-cream: #F9E9EC;
+  --color-green: #32dc32;
+  --inset-shadow: 0 0 1px black inset;
 
   --borrad: 10px;
 }
