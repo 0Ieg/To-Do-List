@@ -3,17 +3,17 @@
     {
       "id": "1",
       "text": "Todo number 1",
-      "completed": false
+      "completed": true
     },
     {
       "id": "2",
       "text": "Todo number 2",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
       "text": "Todo number 3",
-      "completed": false
+      "completed": true
     },
     {
       "id": "4",
