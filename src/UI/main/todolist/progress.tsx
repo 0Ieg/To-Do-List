@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from 'react-redux'
-import { clearTodosAsyncAC } from "../../../BLL/todoSaga";
-import { StateType } from "../../../BLL/store";
-import { getTodos } from "../../../BLL/todoSlice";
+import { clearTodosAsyncAC } from "../../../BLL/store/todo/todoSaga";
+import { StateType } from "../../../BLL/store/store";
+import { getTodos } from "../../../BLL/store/todo/todoSlice";
 
 const Styled = styled.div<{translate:number}>`
 display: flex;

@@ -1,6 +1,6 @@
 import { createAction } from "@reduxjs/toolkit"
 import { call, put, takeEvery } from "redux-saga/effects"
-import { ClearTodosAPI, addTodoAPI, completeTodoAPI, deleteTodoAPI, getTodosAPI } from "../API/todoListAPI"
+import { ClearTodosAPI, addTodoAPI, completeTodoAPI, deleteTodoAPI, getTodosAPI } from "../../../API/todoListAPI"
 import { TodoType, getTodos } from "./todoSlice"
 
 
@@ -9,7 +9,7 @@ export const deleteTodoAsyncAC = createAction<string|undefined>('DELETE_TODO')
 export const completeTodoAsyncAC = createAction<{id:string,completed:boolean}|undefined>('COMPLETE_TODO')
 export const addTodoAsyncAC = createAction<TodoType|undefined>('ADD_TODO')
 export const clearTodosAsyncAC =createAction<string[]|undefined>('CLEAR_TODOS')
-export function* Watcher(){
+export function* TodoWatcher(){
   yield takeEvery(getTodosAsyncAC().type, GetTodoWorker)
   yield takeEvery(deleteTodoAsyncAC().type, DeleteTodoWorker)
   yield takeEvery(completeTodoAsyncAC().type, СompleteTodoWorker)

@@ -1,6 +1,5 @@
-import axios from 'axios';
+import { myAxios } from "./axios"
 
-const myAxios = axios.create({baseURL: 'http://localhost:3001/todos'})
 
 export const getTodosAPI = ()=>{
   return(

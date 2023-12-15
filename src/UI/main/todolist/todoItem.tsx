@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { completeTodoAsyncAC, deleteTodoAsyncAC } from '../../../BLL/todoSaga';
+import { completeTodoAsyncAC, deleteTodoAsyncAC } from '../../../BLL/store/todo/todoSaga';
 
 const Styled = styled.div`
 display: flex;
